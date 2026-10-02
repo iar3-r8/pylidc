@@ -1,0 +1,3 @@
+[submodule "docs/pylidc.github.io"]
+    path = docs/pylidc.github.io
+    url = https://github.com/pylidc/pylidc.github.io
