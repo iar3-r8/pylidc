@@ -19,16 +19,16 @@ have many contours.
 For more information, see the model classes themselves.
 """
 from __future__ import print_function as _pf
+from importlib.resources import files
 
 __version__ = '0.2.3'
 
 # Hidden stuff.
 import os as _os
-import pkg_resources as _pr
 from sqlalchemy import create_engine as _create_engine
 from sqlalchemy.orm import sessionmaker as _sessionmaker
 
-_dbpath  = _pr.resource_filename('pylidc', 'pylidc.sqlite')
+_dbpath = str(files('pylidc') / 'pylidc.sqlite')
 _engine  = _create_engine('sqlite:///'+_dbpath)
 _session = _sessionmaker(bind=_engine)()
 
